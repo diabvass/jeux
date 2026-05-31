@@ -1,0 +1,57 @@
+:root {
+    --bg: #1a1a2e;
+    --fond: #16213e;
+    --text: white;
+    --accent: #e94560;
+    --accent-h: #ff6b81;
+    --blue: #0f3460;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    overflow: hidden;
+    color: var(--text);
+}
+
+.place {
+    transition: all 0.3s ease;
+    animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.controls {
+    gap: 3;
+    padding: 15px;
+    background: var(--blue);
+    border-top: 2px solid var(--accent);
+    text-align: center;
+}
+
+.control-btn {
+    background: var(--accent);
+    color: white;
+    width: 45%;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.control-btn:hover {
+    background: var(--accent-h);
+}
