@@ -30,23 +30,22 @@ export const Multiplication = () => {
     setEnJeu(true);
   };
   const verifier = (c, i) => {
-    let s = false
+    let s = false;
     if (clique !== null || !enjeu) return;
 
     clearTimeout(time.current);
     setClique(i);
 
-
     if (c === multi.reponse) {
       setGain((e) => e + 1);
       setPoint((e) => e + 2);
-      s = true
+      s = true;
     } else {
       setPerte((e) => e + 1);
       setPoint((e) => e - 4);
     }
-    let sauver = `${multi.m} × ${multi.n} = ${c}`
-    Sauvegarde(sauver,s)
+    let sauver = `${multi.m} × ${multi.n} = ${c}`;
+    Sauvegarde(sauver, s);
     time.current = setTimeout(() => {
       setClique(null);
       setMulti(questions());
@@ -95,10 +94,6 @@ export const Multiplication = () => {
           </div>
         </div>
         <div className="place m-1 flex-grow-1 overflow-y-auto p-3">
-          Temps :{" "}
-          <Badge bg="secondary" className="p-1">
-            10
-          </Badge>
           <div className="mt-3 text-light text-center">
             {enjeu ? (
               <>
@@ -139,7 +134,7 @@ export const Multiplication = () => {
             </Button>
           </div>
           <div className="text-start small mt-5">
-          <Principe />
+            <Principe />
           </div>
         </div>
       </div>
