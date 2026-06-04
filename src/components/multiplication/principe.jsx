@@ -1,7 +1,10 @@
 // Affiche les règles du jeu dans une modal Bootstrap.
+import {Histo} from './historique'
 import { Modals } from "../../modale";
 const btn = "Ici";
 const titre = "Comment sont notés les réponses";
+
+
 function body() {
   return (
     <div>
@@ -16,7 +19,8 @@ function body() {
 export function Principe() {
   return (
     <>
-      <Modals nomBtn={btn} titre={titre} body={body} />
+      <Modals nomBtn={btn} titre={titre} body={body} /> <br />
+      <Modals nomBtn='historique' titre='historique' body={Histo} />
     </>
   );
 }
