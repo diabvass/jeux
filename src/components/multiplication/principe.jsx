@@ -1,7 +1,9 @@
-// Affiche les règles du jeu dans une modal Bootstrap.
+// Affiche les règles du jeu dans une modal Bootstrap et l'historique.
+import { Historique } from "./historique";
 import { Modals } from "../../modale";
-const btn = "Ici";
+const btn = "Principe de jeu";
 const titre = "Comment sont notés les réponses";
+
 function body() {
   return (
     <div>
@@ -16,7 +18,10 @@ function body() {
 export function Principe() {
   return (
     <>
-      <Modals nomBtn={btn} titre={titre} body={body} />
+      <div className="d-flex gap-3">
+        <Modals nomBtn={btn} titre={titre} body={body} />
+        <Modals nomBtn="historique" titre="historique" body={Historique} />
+      </div>
     </>
   );
 }

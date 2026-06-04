@@ -2,7 +2,7 @@ import { Badge, Button } from "react-bootstrap";
 import { useState, useRef } from "react";
 import { questions } from "./Compte.jsx";
 import { Principe } from "./principe.jsx";
-
+import { Sauvegarde } from "./historique.jsx";
 export const Multiplication = () => {
   let [multi, setMulti] = useState(() => questions());
   let [gain, setGain] = useState(0);
@@ -30,6 +30,7 @@ export const Multiplication = () => {
     setEnJeu(true);
   };
   const verifier = (c, i) => {
+    let s = false;
     if (clique !== null || !enjeu) return;
 
     clearTimeout(time.current);
@@ -38,15 +39,17 @@ export const Multiplication = () => {
     if (c === multi.reponse) {
       setGain((e) => e + 1);
       setPoint((e) => e + 2);
+      s = true;
     } else {
       setPerte((e) => e + 1);
       setPoint((e) => e - 4);
     }
-
+    let sauver = `${multi.m} × ${multi.n} = ${c}`;
+    Sauvegarde(sauver, s);
     time.current = setTimeout(() => {
       setClique(null);
       setMulti(questions());
-    }, 1200);
+    }, 500);
   };
 
   return (
@@ -91,10 +94,6 @@ export const Multiplication = () => {
           </div>
         </div>
         <div className="place m-1 flex-grow-1 overflow-y-auto p-3">
-          Temps :{" "}
-          <Badge bg="secondary" className="p-1">
-            10
-          </Badge>
           <div className="mt-3 text-light text-center">
             {enjeu ? (
               <>
@@ -135,7 +134,7 @@ export const Multiplication = () => {
             </Button>
           </div>
           <div className="text-start small mt-5">
-            Voir le principe de jeu <Principe />
+            <Principe />
           </div>
         </div>
       </div>
