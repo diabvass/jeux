@@ -50,7 +50,7 @@ export const Multiplication = () => {
     time.current = setTimeout(() => {
       setClique(null);
       setMulti(questions());
-    }, 1200);
+    }, 500);
   };
 
   return (
@@ -139,7 +139,7 @@ export const Multiplication = () => {
             </Button>
           </div>
           <div className="text-start small mt-5">
-            Voir le principe de jeu <Principe />
+          <Principe />
           </div>
         </div>
       </div>
