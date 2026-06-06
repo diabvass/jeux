@@ -1,4 +1,4 @@
-const historiques = [];
+let historiques = [];
 
 class ClassHistorique {
   constructor(contenu, statut) {
@@ -6,6 +6,9 @@ class ClassHistorique {
     this.contenu = contenu;
     this.statut = statut;
   }
+}
+export function ViderHistorique(){
+  return historiques = []
 }
 
 export const Sauvegarde = (d, s) => {
