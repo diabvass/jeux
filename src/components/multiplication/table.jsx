@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { questions } from "./Compte.jsx";
 import { Principe } from "./principe.jsx";
 import { Sauvegarde } from "./historique.jsx";
+import { ViderHistorique } from "./historique.jsx";
 export const Multiplication = () => {
   let [multi, setMulti] = useState(() => questions());
   let [gain, setGain] = useState(0);
@@ -26,6 +27,7 @@ export const Multiplication = () => {
     setPerte(0);
     setPoint(0);
     setClique(null);
+    ViderHistorique();
     setMulti(questions());
     setEnJeu(true);
   };
