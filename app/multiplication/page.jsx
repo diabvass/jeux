@@ -2,7 +2,7 @@
 
 import { Badge, Button } from "react-bootstrap";
 import { useState, useRef } from "react";
-import { questions } from "./Compte.jsx";
+import { questions } from "./Compte.js";
 import { Header } from "@/app/components/header.jsx"
 import { Main } from "@/app/components/main.jsx"
 import { Footer } from "@/app/components/footer.jsx"
