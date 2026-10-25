@@ -9,7 +9,7 @@ import { Footer } from "@/app/components/footer.jsx"
 
 
 export default function Multiplication () {
-  let [multi, setMulti] = useState(() => questions());
+  let [multi, setMulti] = useState(null);
   let [gain, setGain] = useState(0);
   let [perte, setPerte] = useState(0);
   let [point, setPoint] = useState(0);

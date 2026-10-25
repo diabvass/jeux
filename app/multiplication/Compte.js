@@ -1,5 +1,5 @@
 
-export const questions = () => {
+export function questions() {
   let m = Math.floor(Math.random() * 9) + 1;
   let n = Math.floor(Math.random() * 9) + 1;
   let p1 = m * n;
